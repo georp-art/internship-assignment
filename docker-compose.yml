@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+    postgres:
+        ports:
+            - 54321:5432
+        image:
+            postgres:15-alpine
+        container_name:
+            warehousedatabase
+        environment:
+            POSTGRES_USER: warehouse_user
+            POSTGRES_PASSWORD: warehouse_pass
+            POSTGRES_DB: warehouse_db
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+            - ./db:/docker-entrypoint-initdb.d
+volumes:
+    pgdata:
