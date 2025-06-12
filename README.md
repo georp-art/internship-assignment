@@ -1,0 +1,2 @@
+The backend is built with SpringBoot using layered architecture(repositories,services,controllers). Repositories usie Spring Data JPA to connect with the database(PostgreSQL). Services contain core application logic
+and interact with repositories. Controllers handle HTTP requests and responses. APIs are secured via JWT and tested using Postman. The entire service is using Dockerfile and docker-compose.yml for environment setup.
